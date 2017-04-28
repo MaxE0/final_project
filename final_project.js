@@ -1,9 +1,8 @@
 var namespace = "http://www.w3.org/2000/svg"
 function TPP (){
    document.querySelector("body").setAttribute("style", "background: url(https://static.pexels.com/photos/50704/car-race-ferrari-racing-car-pirelli-50704.jpeg)")
+ // Write your code here!s
 }
-// Write your code here!
-
 // DO NOT EDIT CODE BELOW THIS LINE!
 function getX(shape) {
   if (!shape) {
