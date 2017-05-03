@@ -1,20 +1,5 @@
 var namespace = "http://www.w3.org/2000/svg"
-function TPP() {
 
-
-}
-
-function OTHER() {
-   document.querySelector("body").setAttribute("style", "background: url(http://media.caranddriver.com/images/media/51/2017-10best-lead-photo-672628-s-original.jpg")
-
-}
-function TYP() {
-  document.querySelector("body").setAttribute("style", "background: url(http://media.caranddriver.com/images/media/51/25-cars-worth-waiting-for-lp-mclaren-p14-photo-658259-s-original.jpg")
-}
-var question8Answer = document.querySelector("input[name='car']:checked").value
- if (question8Answer == "Benz") {
-   alert(Correct)
- }
 // DO NOT EDIT CODE BELOW THIS LINE!
 function getX(shape) {
   if (!shape) {
