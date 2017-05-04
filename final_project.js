@@ -1,5 +1,44 @@
 var namespace = "http://www.w3.org/2000/svg"
-
+var mon = makeImage("http://www.animatedimages.org/data/media/574/animated-monster-image-0030.gif",80, 30,30, 30)
+var ball = makeImage("http://bestanimations.com/Music/MirrorBalls/animated-purple-disco-ball3.gif",40,50,10,10)
+var ball1 = makeImage("http://rs737.pbsrc.com/albums/xx14/Shah_Alam/ball.gif~c200",120,80,10,10)
+addEventListener('keydown',key)
+function key(event) {
+var tlxX = getX(mon)
+var tlxY = getY(mon)
+if(event.key == "ArrowLeft" && tlxX>0) {
+   move(mon,-6,0)
+}else if(event.key == "ArrowRight" && tlxX < 175) {
+   move(mon,6,0)
+ }else if(event.key == "ArrowUp" && tlxY > 0) {
+   move(mon,0,-6)
+ }else if(event.key == "ArrowDown" && tlxY < 120) {
+   move(mon,0,6)
+ }
+ }
+ function scMove()  {
+  var y1 = getX(sc1)
+  var y2 = getX(sc1)
+  if(collides(mon,sc1)) {
+    setX(mon,150)
+    setY(mon,100)
+     score = 0
+     scoreLabel.innerHTML = score
+     if(collides(mon,sc2)) {
+       setX(mon,150)
+       setY(mon,100)
+         score = 0
+        scoreLabel.innerHTML = score
+     }
+     if(y1>0) {
+       move(sc1,0,5)
+     }else{
+       setX(y1,125)
+     }
+     requestAnimationFrame(scMove)
+   }
+ }
+ scMove()
 // DO NOT EDIT CODE BELOW THIS LINE!
 function getX(shape) {
   if (!shape) {
