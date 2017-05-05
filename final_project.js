@@ -17,27 +17,29 @@ if(event.key == "ArrowLeft" && tlxX>0) {
  }
  }
  function scMove()  {
-  var y1 = getX(sc1)
-  var y2 = getX(sc1)
-  if(collides(mon,sc1)) {
+  var y1 = getY(ball)
+  var y2 = getX(ball1)
+  if(collides(mon,ball)) {
     setX(mon,150)
     setY(mon,100)
-     score = 0
-     scoreLabel.innerHTML = score
-     if(collides(mon,sc2)) {
+  }
+     if(collides(mon,ball1)) {
        setX(mon,150)
        setY(mon,100)
-         score = 0
-        scoreLabel.innerHTML = score
+
      }
-     if(y1>0) {
-       move(sc1,0,5)
+     if(y1<150) {
+       move(ball,0,3)
      }else{
-       setX(y1,125)
+       setY(ball,0)
+     }
+     if(y2<150) {
+       move(ball1,0,4)
+     }else{
+       setY(ball1,50)
      }
      requestAnimationFrame(scMove)
    }
- }
  scMove()
 // DO NOT EDIT CODE BELOW THIS LINE!
 function getX(shape) {
