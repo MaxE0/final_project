@@ -2,6 +2,7 @@ var namespace = "http://www.w3.org/2000/svg"
 var mon = makeImage("http://www.animatedimages.org/data/media/574/animated-monster-image-0030.gif",80, 30,30, 30)
 var ball = makeImage("http://bestanimations.com/Music/MirrorBalls/animated-purple-disco-ball3.gif",40,50,10,10)
 var ball1 = makeImage("http://rs737.pbsrc.com/albums/xx14/Shah_Alam/ball.gif~c200",120,80,10,10)
+var ball2 = makeImage("https://i.kinja-img.com/gawker-media/image/upload/t_original/ocybfac6knh2xd0buyfw.gif",100,60,20,20)
 addEventListener('keydown',key)
 function key(event) {
 var tlxX = getX(mon)
@@ -19,11 +20,13 @@ if(event.key == "ArrowLeft" && tlxX>0) {
  function scMove()  {
   var y1 = getY(ball)
   var y2 = getY(ball1)
+  var y3 = getY(ball2)
   if(collides(mon,ball)) {
     setX(mon,150)
     setY(mon,100)
   }
      if(collides(mon,ball1)) {
+       makeText("YOU LOSE",30,20,10,30)
        setX(mon,150)
        setY(mon,100)
 
@@ -34,9 +37,14 @@ if(event.key == "ArrowLeft" && tlxX>0) {
        setY(ball,0)
      }
      if(y2<150) {
-       move(ball1,0,7)
+       move(ball1,0,3)
      }else{
        setY(ball1,0)
+     }
+     if(y3<150) {
+       move(ball2,0,7)
+     }else{
+       setY(ball2,0)
      }
      requestAnimationFrame(scMove)
    }
