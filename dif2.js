@@ -3,6 +3,12 @@ var mon = makeImage("http://www.animatedimages.org/data/media/574/animated-monst
 var ball = makeImage("http://bestanimations.com/Music/MirrorBalls/animated-purple-disco-ball3.gif",40,50,10,10)
 var ball1 = makeImage("http://rs737.pbsrc.com/albums/xx14/Shah_Alam/ball.gif~c200",120,80,10,10)
 var ball2 = makeImage("https://i.kinja-img.com/gawker-media/image/upload/t_original/ocybfac6knh2xd0buyfw.gif",100,60,20,20)
+var scoreLabel = makeText("0", 10, 30, 30)
+ var score = 0
+function updateScore() {
+   score = score + 10
+    scoreLabel.innerHTML = score
+  }
 addEventListener('keydown',key)
 function key(event) {
 var tlxX = getX(mon)
@@ -22,15 +28,34 @@ if(event.key == "ArrowLeft" && tlxX>0) {
   var y2 = getY(ball1)
   var y3 = getY(ball2)
   if(collides(mon,ball)) {
+     makeText("YOU LOSE",80,70,20,20,"red")
     setX(mon,150)
     setY(mon,100)
+    score = 0
+    scorelabel.innerHTML = score
   }
      if(collides(mon,ball1)) {
-       makeText("YOU LOSE",30,20,10,30)
+       makeText("YOU LOSE",80,70,20,20,"red")
        setX(mon,150)
        setY(mon,100)
+       score = 0
+     scorelabel.innerHTML = score
 
      }
+     if(collides(mon,ball)) {
+       makeText("YOU LOSE",80,70,20,20,"red")
+       setX(mon,150)
+       setY(mon,100)
+       score = 0
+     scorelabel.innerHTML = score
+   }
+   if(collides(mon,ball2)) {
+     makeText("YOU LOSE",80,70,20,20,"red")
+     setX(mon,150)
+     setY(mon,100)
+     score = 0
+   scorelabel.innerHTML = score
+ }
      if(y1<150) {
        move(ball,0,5)
      }else{
@@ -42,10 +67,11 @@ if(event.key == "ArrowLeft" && tlxX>0) {
        setY(ball1,0)
      }
      if(y3<150) {
-       move(ball2,0,7)
+       move(ball2,0,3)
      }else{
        setY(ball2,0)
      }
+     updateScore()
      requestAnimationFrame(scMove)
    }
  scMove()
