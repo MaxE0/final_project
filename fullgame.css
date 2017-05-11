@@ -1,3 +1,17 @@
 body {
-  background: url(https://static.pexels.com/photos/87646/horsehead-nebula-dark-nebula-constellation-orion-87646.jpeg)
+background:url(https://static.pexels.com/photos/87646/horsehead-nebula-dark-nebula-constellation-orion-87646.jpeg
+)
+}
+p {
+  color: blue;
+   text-align: center;
+}
+h1 {
+  color: red;
+  text-align: center;
+}
+svg {
+  background: red;
+  display: block;
+  margin: auto;
 }

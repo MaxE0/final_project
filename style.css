@@ -1,3 +1,12 @@
 body {
-  background:url(https://wallpaperbrowse.com/media/images/background-18.jpg)
+background:url(https://cdn.push-entertainment.com/HD/Hyperstars-3D-Animated-Desktop-Background.jpg)
+}
+svg {
+  background: green;
+  display: block;
+  margin: auto;
+}
+p {
+  color: red;
+   text-align: center;
 }

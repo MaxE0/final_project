@@ -2,6 +2,7 @@ var namespace = "http://www.w3.org/2000/svg"
 var mon = makeImage("http://www.animatedimages.org/data/media/574/animated-monster-image-0030.gif",80, 30,30, 30)
 var ball = makeImage("http://bestanimations.com/Music/MirrorBalls/animated-purple-disco-ball3.gif",40,50,10,10)
 var ball1 = makeImage("http://rs737.pbsrc.com/albums/xx14/Shah_Alam/ball.gif~c200",120,80,10,10)
+var ball3 = makeImage("http://cdn.churchm.ag/wp-content/uploads/2012/05/8-bit-3D-Contra.gif",-10,50,50,80)
 var ball2 = makeImage("https://i.kinja-img.com/gawker-media/image/upload/t_original/ocybfac6knh2xd0buyfw.gif",100,60,20,20)
 var scoreLabel = makeText("0", 10, 30, 30)
  var score = 0
@@ -27,15 +28,14 @@ if(event.key == "ArrowLeft" && tlxX>0) {
   var y1 = getY(ball)
   var y2 = getY(ball1)
   var y3 = getY(ball2)
+  var y4 = getX(ball3)
   if(collides(mon,ball)) {
-     makeText("YOU LOSE",80,70,20,20,"red")
     setX(mon,150)
     setY(mon,100)
     score = 0
     scorelabel.innerHTML = score
   }
      if(collides(mon,ball1)) {
-       makeText("YOU LOSE",80,70,20,20,"red")
        setX(mon,150)
        setY(mon,100)
        score = 0
@@ -43,19 +43,23 @@ if(event.key == "ArrowLeft" && tlxX>0) {
 
      }
      if(collides(mon,ball)) {
-       makeText("YOU LOSE",80,70,20,20,"red")
        setX(mon,150)
        setY(mon,100)
        score = 0
      scorelabel.innerHTML = score
    }
    if(collides(mon,ball2)) {
-     makeText("YOU LOSE",80,70,20,20,"red")
      setX(mon,150)
      setY(mon,100)
      score = 0
    scorelabel.innerHTML = score
  }
+ if(collides(mon,ball3)) {
+   setX(mon,150)
+   setY(mon,100)
+   score = 0
+ scorelabel.innerHTML = score
+}
      if(y1<150) {
        move(ball,0,5)
      }else{
@@ -70,6 +74,11 @@ if(event.key == "ArrowLeft" && tlxX>0) {
        move(ball2,0,3)
      }else{
        setY(ball2,0)
+     }
+     if(y4<150) {
+       move(ball3,2,0)
+     }else{
+       setX(ball3,20)
      }
      updateScore()
      requestAnimationFrame(scMove)
