@@ -4,6 +4,7 @@ var ball = makeImage("http://bestanimations.com/Music/MirrorBalls/animated-purpl
 var ball1 = makeImage("http://rs737.pbsrc.com/albums/xx14/Shah_Alam/ball.gif~c200",120,80,10,10)
 var ball3 = makeImage("http://cdn.churchm.ag/wp-content/uploads/2012/05/8-bit-3D-Contra.gif",-10,50,50,80)
 var ball2 = makeImage("https://i.kinja-img.com/gawker-media/image/upload/t_original/ocybfac6knh2xd0buyfw.gif",100,60,20,20)
+var ball4 = makeImage("http://cdn.churchm.ag/wp-content/uploads/2012/05/8-bit-3D-MegaMan.gif",5,5,40,40)
 var scoreLabel = makeText("0", 10, 30, 30)
  var score = 0
 function updateScore() {
@@ -29,6 +30,7 @@ if(event.key == "ArrowLeft" && tlxX>0) {
   var y2 = getY(ball1)
   var y3 = getY(ball2)
   var y4 = getX(ball3)
+  var y5 = getX(ball4)
   if(collides(mon,ball)) {
     setX(mon,150)
     setY(mon,100)
@@ -60,6 +62,12 @@ if(event.key == "ArrowLeft" && tlxX>0) {
    score = 0
  scorelabel.innerHTML = score
 }
+if(collides(mon,ball4)) {
+  setX(mon,150)
+  setY(mon,100)
+  score = 0
+  scorelabel.innerHTML = score
+}
      if(y1<150) {
        move(ball,0,5)
      }else{
@@ -79,6 +87,11 @@ if(event.key == "ArrowLeft" && tlxX>0) {
        move(ball3,2,0)
      }else{
        setX(ball3,20)
+     }
+     if(y5<150) {
+       move(ball4,2,0)
+     }else{
+       setX(ball4,20)
      }
      updateScore()
      requestAnimationFrame(scMove)
