@@ -2,6 +2,9 @@ body {
 background:url(https://static.pexels.com/photos/87646/horsehead-nebula-dark-nebula-constellation-orion-87646.jpeg
 )
 }
+a:link {
+    color: red;
+}
 p {
   color: blue;
    text-align: center;

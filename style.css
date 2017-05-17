@@ -1,6 +1,9 @@
 body {
 background:url(https://cdn.push-entertainment.com/HD/Hyperstars-3D-Animated-Desktop-Background.jpg)
 }
+a:link {
+    color: red;
+}
 svg {
   background: green;
   display: block;

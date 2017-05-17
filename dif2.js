@@ -24,6 +24,7 @@ if(event.key == "ArrowLeft" && tlxX>0) {
  }else if(event.key == "ArrowDown" && tlxY < 120) {
    move(mon,0,2)
  }
+ updateScore()
  }
  function scMove()  {
   var y1 = getY(ball)
@@ -93,7 +94,7 @@ if(collides(mon,ball4)) {
      }else{
        setX(ball4,20)
      }
-     updateScore()
+
      requestAnimationFrame(scMove)
    }
  scMove()
